@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+.name{
+    display: none;
+    position: sticky;
+    position: -webkit-sticky;
+    position: static;
+}
+    </style>
+</head>
+<body>
+    <input type="checkbox" onclick="checkme()" name="box" id="box">check me</input>
+    <br>
+    <p1 id="name" class="name">hii this is shubham</p1>
+
+
+    <script>
+        function checkme()
+        {
+            var cb = document.getElementById("box")
+            var text = document.getElementById("name")
+            if(cb.checked==true)
+            {
+
+                text.style.display="block";
+            }
+            else{
+                text.style.display="none";
+            }
+        }
+    </script>
+</body>
+</html>

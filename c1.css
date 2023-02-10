@@ -1,0 +1,133 @@
+
+.border{
+    border: 2px solid red;
+}
+
+.page3container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        "box1 box2 box3"
+        "box4 box5 box6";
+    place-items: center;
+    justify-content: space-evenly;
+}
+
+#box1 {
+    grid-area: box1;
+        /* margin-left: 6%; */
+}
+
+#box2 {
+    grid-area: box2;
+    /* margin-right: 6%; */
+}
+
+#box3 {
+    grid-area: box3;
+    /*     /* margin-left: 6%; */ 
+}
+
+#box4 {
+    grid-area: box4;
+    /* margin-right: 6%; */
+}
+#box5 {
+    grid-area: box5;
+    /* margin-right: 6%; */
+}
+#box6 {
+    grid-area: box6;
+    /* margin-right: 6%; */
+}
+.page3box {
+    height: 96%;
+    width: 94%;
+    /* margin: 5%; */
+    /* background-color: lightcyan; */
+    border-radius: 3%;
+    margin: 1%;
+}
+.page3img {
+    height: 100%;
+    width: 100%;
+    box-shadow: 4px 4px 4px black;
+    border-radius: 3%;
+    opacity: 75%;
+    transition-duration: .5s;
+}
+
+.lightbox {
+    /* Default to hidden */
+    display: none;
+    /* Overlay entire screen */
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* A bit of padding around image */
+    padding: 1em;
+    /* Translucent background */
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Unhide the lightbox when it's the target */
+.lightbox:target {
+    display: block;
+}
+
+.lightbox span {
+    display: block;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 95%;
+    /* margin-top: auto; */
+    /* margin-bottom: auto; */
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 95% 86%;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #f9e3e3;
+    line-height: 1rem;
+}
+
+
+
+@media (max-width:500px)
+{
+    .page3container {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        height: 95%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+            "box1"
+            "box2"
+            "box3"
+            "box4"
+            "box5"
+            "box6";
+        place-items: center;
+        justify-content: space-evenly;
+    }
+
+    .page3box {
+        height: 96%;
+        width: 85%;
+        border-radius: 3%;
+        margin: 6%;
+    }
+}
