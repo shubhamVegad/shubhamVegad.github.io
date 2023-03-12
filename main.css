@@ -175,13 +175,13 @@ ul li a {
 }
 
 .fancy {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: #7380b5;
     font-style: italic;
     font-family: cursive;
     line-height: 21px;
     font-weight: 100;
-    opacity: 45%;
+    opacity: 25%;
 }
 
 .maintext0 {
