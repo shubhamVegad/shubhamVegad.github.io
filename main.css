@@ -58,7 +58,7 @@ body {
     position: fixed;
     top: 50%;
     left: 1%;
-    height: 46%;
+    height: 43%;
     width: 4%;
     display: flex;
     flex-direction: column;
@@ -1022,8 +1022,8 @@ a:hover {
     text-transform: uppercase;
     color: var(--color);
     padding: 0px;
-    height: 12%;
-    width: 70%;
+    height: 11%;
+    width: 60%;
     box-shadow: 2px 2px 5px #6060d4;
 }
 
@@ -1260,14 +1260,14 @@ button:hover::after {
 
 .shadow__btn {
     background: #10499d;
-    box-shadow: 0 0 20px #10499d;
+    box-shadow: 0 0 10px #10499d;
 }
 
 .shadow__btn:hover {
     box-shadow: 0 0 5px #10499d,
-        0 0 20px #10499d,
-        0 0 40px #10499d,
-        0 0 80px #10499d;
+        0 0 15px #10499d,
+        0 0 30px #10499d,
+        0 0 60px #10499d;
 }
 
 /* ************************loader************************* */
@@ -1695,7 +1695,8 @@ button:hover::after {
     }
 
     .smline {
-        display: none;
+/*         display: none; */
+        height: 4%;
     }
 
     .smimg {
