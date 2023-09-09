@@ -43,6 +43,42 @@
         </nav>
 
 
+        <div class="overlay overlay-slide-left" id="overlay">
+            <!-- MENU ITEMS -->
+            <nav>
+                <ul class="navul">
+                    <li id="nav-1" class="slide-out-1 center">
+                        <a href="#" class="center">Home</a>
+                    </li>
+                    <li id="nav-2" class="slide-out-2 center">
+                        <a href="#about" class="center">About</a>
+                    </li>
+                    <li id="nav-3" class="slide-out-3 center">
+                        <a href="#whatido" class="center">What I Do</a>
+                    </li>
+                    <li id="nav-4" class="slide-out-4 center">
+                        <a href="#projects" class="center">Projects</a>
+                    </li>
+                    <li id="nav-5" class="slide-out-5 center">
+                        <a href="#contactme" class="center">Contact Me</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!-- HAMBURGER MENU -->
+        <div class="mobnav">
+            <div class="hamburger-menu" id="hamburger-menu">
+                <div class="menu-bar1"></div>
+                <div class="menu-bar2"></div>
+                <div class="menu-bar3"></div>
+            </div>
+
+        </div>
+
+
+
+
+
 
         <input data-aos="fade" title="Pin Navigationbar." type="checkbox" class="l bottom"
             tooltip-text="i am tooltip text " onclick="checkme()" id="box">
@@ -61,8 +97,7 @@
                         class="smimg filterWhite" src="linkedin.svg" alt=""></a></button>
             <button class="btn"><a href="https://twitter.com/VegadShubham" target="_blank"><img
                         class="smimg filterWhite" src="twitter.svg" alt=""></a></button>
-<!--             <button class="btn"><a href="#" target="_blank"><img class="smimg filterWhite" src="website.svg"
-                        alt=""></a></button> -->
+
             <div class="smline"></div>
         </div>
 
@@ -118,17 +153,17 @@
                         building accessible human-centered products.</p>
 
                     <button class="p1lbtn">
-                        <a class="p1ldonwlod" href="200310116005_ShubhamVegad.pdf" download="Shubham's Resume">Download CV</a>
+                        <a class="p1ldonwlod" href="Resume.pdf" download="Shubham's Resume">Download CV</a>
                     </button>
                 </div>
                 <button class="p1lmbtn">
-                    <a class="p1ldonwlod" href="200310116005_ShubhamVegad.pdf" download="Shubham's Resume">Download CV</a>
+                    <a class="p1ldonwlod" href="Resume.pdf" download="Shubham's Resume">Download CV</a>
                 </button>
                 <div class="p1r ">
 
                     <ul class="p1font" data-aos="zoom-in-down" data-aos-delay="300">
                         <li>
-                            <p>Hey! I’m Shubham and I’m a Web developer. I love working on the web and ensure
+                            <p>Hey! I’m Shubham and I’m a CSS developer. I love working on the web and ensure
                                 it continues to be a place for everyone and our creative, personal, and weird passions.
                             </p>
                         </li>
@@ -137,7 +172,7 @@
                                 Projects, apart from that I'm interested in sketches and designs since my childhood.</p>
                         </li>
                         <li>
-                            <p>Fast-forward to today, I'm 21 and currently pursuing my under graduation in
+                            <p>Fast-forward to today, I'm 21 and currently purchasing my under graduation in
                                 BE-Information Technology From Lukhdhirji Engineering College.</p>
                         </li>
 
@@ -216,12 +251,12 @@
                 </div>
                 <div class="page3box" data-aos="flip-right" data-aos-delay="300" id="box2">
                     <a href="#img2">
-                        <img class="page3img" src="portfolioss.jpg">
+                        <img class="page3img" src="kessitech.jpg">
                     </a>
                 </div>
                 <div class="page3box" data-aos="flip-left" data-aos-delay="500" id="box3">
                     <a href="#img3">
-                        <img class="page3img" src="moviedb.jpg">
+                        <img class="page3img" src="newslatterss.jpg">
                     </a>
                 </div>
                 <div class="page3box" data-aos="flip-right" data-aos-delay="700" id="box4">
@@ -237,14 +272,14 @@
                     </span>
                 </a>
                 <a href="#projects" class="lightbox" id="img2">
-                    <span style="background-image: url(portfolioss.jpg)">
-                        <p class="page3spantitle">My Portfolio</p> <br>Built a Portfolio with amazing frontend design
-                        and animation.
+                    <span style="background-image: url(kessitech.jpg)">
+                        <p class="page3spantitle">KessiTech</p> <br>Built a React app for kessitech company as a
+                        commercial project
                     </span>
                 </a>
                 <a href="#projects" class="lightbox" id="img3">
-                    <span style="background-image: url(moviedb.jpg)" <p class="page3spantitle">MovieDB</p>
-                        <br>MovieDb is live React Project which contains information about Movies and TV shows</span>
+                    <span style="background-image: url(newslatterss.jpg)" <p class="page3spantitle">Newsletter</p>
+                        <br>Newsletter is a app with sign-in page connected to a Database.</span>
                 </a>
                 <a href="#projects" class="lightbox" id="img4">
                     <span style="background-image: url(apple.jpg)" <p class="page3spantitle">Clone Site</p>
@@ -313,14 +348,62 @@
     <!-- </div> -->
 
     <script>
+        const hamburgerMenu = document.querySelector("#hamburger-menu");
+        const overlay = document.querySelector("#overlay");
+        const nav1 = document.querySelector("#nav-1");
+        const nav2 = document.querySelector("#nav-2");
+        const nav3 = document.querySelector("#nav-3");
+        const nav4 = document.querySelector("#nav-4");
+        const nav5 = document.querySelector("#nav-5");
+        const navItems = [nav1, nav2, nav3, nav4, nav5];
 
-        var preloader  = document.getElementById("preloader")
+        // Control Navigation Animation
+        function navAnimation(val1, val2) {
+            navItems.forEach((nav, i) => {
+                nav.classList.replace(`slide-${val1}-${i + 1}`, `slide-${val2}-${i + 1}`);
+            });
+        }
 
-        window.addEventListener("load", function(){
+        function toggleNav() {
+            // Toggle: Hamburger Open/Close
+            hamburgerMenu.classList.toggle("active");
+
+            //   Toggle: Menu Active
+            overlay.classList.toggle("overlay-active");
+
+            if (overlay.classList.contains("overlay-active")) {
+                // Animate In - Overlay
+                overlay.classList.replace("overlay-slide-left", "overlay-slide-right");
+
+                // Animate In - Nav Items
+                navAnimation("out", "in");
+            } else {
+                // Animate Out - Overlay
+                overlay.classList.replace("overlay-slide-right", "overlay-slide-left");
+
+                // Animate Out - Nav Items
+                navAnimation("in", "out");
+            }
+        }
+
+        // Events Listeners
+        hamburgerMenu.addEventListener("click", toggleNav);
+        navItems.forEach((nav) => {
+            nav.addEventListener("click", toggleNav);
+        });
+
+    </script>
+
+
+    <script>
+
+        var preloader = document.getElementById("preloader")
+
+        window.addEventListener("load", function () {
             preloader.style.display = "none";
         })
 
-    
+
 
         function checkme() {
 

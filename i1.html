@@ -6,35 +6,154 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .border{
+            border: 2px solid green;
+        }
 
-.name{
-    display: none;
-    position: sticky;
-    position: -webkit-sticky;
-    position: static;
+.about{
+    height: 100vh;
+    width: 100vw;
+    background-color: #9d7272;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
 }
+.aboutbox{
+    height: 80%;
+    width: 50%;
+    background-color: #3e3939;
+    border-radius: 2%;
+    box-shadow: 2px 2px 3px rgb(103, 77, 81);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 2%;
+}
+.heading{
+
+    height: 5%;
+    font-size: 2rem;
+    margin: 1%;
+    font-family: monospace;
+    font-weight: 900;
+}
+
+.mail{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+}
+
+.mailbox{
+    margin-top: 10%;
+}
+.text{
+    color: #fa4753;
+
+}
+
+
+/* ******input*********** */
+
+.input {
+  max-width: 190px;
+  height: 30px;
+  border: 2px solid transparent;
+  outline: none;
+  border-bottom: 2px solid #3f3f3f;
+  caret-color: #3f3f3f;
+  background-color: #212121;
+  padding: 5px;
+  transition: .5s linear;
+  font-family: monospace;
+  letter-spacing: 1px;
+}
+
+.input:focus {
+  border: 2px solid #fa4753;
+  caret-color: #fa4753;
+  color: #fa4753;
+  box-shadow: 4px 4px 10px #070707;
+}
+
+.input:focus::placeholder {
+  color: #fa4753;
+}
+/* ********************submit********************** */
+
+button {
+ padding: 0.8em 1.8em;
+ border: 2px solid #fa4753;
+ position: relative;
+ overflow: hidden;
+ background-color: transparent;
+ text-align: center;
+ text-transform: uppercase;
+ font-size: 16px;
+ transition: .3s;
+ z-index: 1;
+ font-family: inherit;
+ color: grey;
+ margin-top: 10%;
+}
+
+button::before {
+ content: '';
+ width: 0;
+ height: 300%;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%) rotate(45deg);
+ background: #fa4753;
+ transition: .5s ease;
+ display: block;
+ z-index: -1;
+}
+
+button:hover::before {
+ width: 105%;
+}
+
+button:hover {
+ color: #111;
+}
+
+
+
+
+
     </style>
 </head>
 <body>
-    <input type="checkbox" onclick="checkme()" name="box" id="box">check me</input>
-    <br>
-    <p1 id="name" class="name">hii this is shubham</p1>
+    <div class="about ">
+        <div class="heading">
+            About
+        </div>
+        <div class="aboutbox ">
+            <div class="text ">
 
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum id, sint omnis voluptas in, minus cupiditate quibusdam similique corrupti voluptatibus porro doloribus a saepe fugit?
+            </div>
+            <div class="mail ">
 
-    <script>
-        function checkme()
-        {
-            var cb = document.getElementById("box")
-            var text = document.getElementById("name")
-            if(cb.checked==true)
-            {
+                <form action="#"></form>
+                <input placeholder="Name" class="input mailbox" name="text" type="text">
+                <input placeholder="Email" class="input mailbox" name="text" type="text">
+                <input placeholder="Type Message" class="input mailbox" name="text" type="text">
+                <button type="submit"> Send</button>
 
-                text.style.display="block";
-            }
-            else{
-                text.style.display="none";
-            }
-        }
-    </script>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
